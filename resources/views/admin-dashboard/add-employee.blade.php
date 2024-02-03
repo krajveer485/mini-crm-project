@@ -8,7 +8,7 @@
                     <div class="white_box mb_30">
                         <div class="box_header ">
                             <div class="main-title">
-                                <h3 class="mb-0">Employee Details</h3>
+                                <h3 class="mb-0">Employee Detailsdd</h3>
                             </div>
                         </div>
                         <div class="input-group mb-3">
