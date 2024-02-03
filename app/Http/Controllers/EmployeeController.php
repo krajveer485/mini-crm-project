@@ -11,7 +11,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin-dashboard.employee-list');
     }
 
     /**
@@ -19,7 +19,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin-dashboard.add-employee');
     }
 
     /**
