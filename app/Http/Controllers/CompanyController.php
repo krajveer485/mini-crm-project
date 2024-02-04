@@ -66,7 +66,7 @@ class CompanyController extends Controller
                 'name' => 'required',
                 'email' => 'required|email|unique:companies,email',
                 'website' => 'required',
-                'logo' => 'required|image|mimes:jpeg,png,jpg|dimensions:min_width=100,min_height=100',
+                'logo' => 'required|image|mimes:jpeg,png,jpg|dimensions:max_width=100,max_height=100',
             ]);
 
             //
