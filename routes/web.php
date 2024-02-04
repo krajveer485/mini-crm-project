@@ -18,24 +18,12 @@ use App\Http\Controllers\EmployeeController;
 
 Route::resource('companies', CompanyController::class);
 Route::resource('employees', EmployeeController::class);
+Route::get('/companies-list', [App\Http\Controllers\CompanyController::class,'datalist'])->name('companies_list');
+Route::get('/employees-list', [App\Http\Controllers\EmployeeController::class,'datalist'])->name('employees_list');
 
-Route::get('/', function () {
-    return view('admin-dashboard.dashboard');
-});
-// Route::get('add-company', function () {
-//     return view('admin-dashboard.add-companie');
-// });
-// Route::get('companies-list', function () {
-//     return view('admin-dashboard.companie-list');
-// });
-// Route::get('add-employee', function () {
-//     return view('admin-dashboard.add-employee');
-// });
-// Route::get('employee-list', function () {
-//     return view('admin-dashboard.employee-list');
-// });
+
 Auth::routes(['register' => false]);
 // Auth::routes();
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

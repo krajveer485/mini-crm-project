@@ -40,7 +40,20 @@
     <link rel="stylesheet" href="{{ asset('css/metisMenu.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/style1.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/colors/default.css') }}" id="colorSkinCSS">
+    <link rel="stylesheet" href="{{ asset('css/colors/default.css') }}" id="colorSkinCSS">  
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <style>
+        .header_iner {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    padding: 1px !important;
+    position: relative;
+    margin: 27px 30px;
+    border-radius: 7px;
+}
+</style>
 </head>
 
 <body class="crm_body_bg">
@@ -71,12 +84,18 @@
                             <div class="profile_info">
                                 <img src="{{ asset('img/client_img.png')}}" alt="#">
                                 <div class="profile_info_iner">
-                                    <p>Welcome Admin!</p>
-                                    <h5>Travor James</h5>
+                                    <p>Welcome MINI CRM!</p>
+                                    <h5> {{ Auth::user()->name }}</h5>
                                     <div class="profile_info_details">
-                                        <a href="#">My Profile <i class="ti-user"></i></a>
-                                        <a href="#">Settings <i class="ti-settings"></i></a>
-                                        <a href="#">Log Out <i class="ti-shift-left"></i></a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                                        
                                     </div>
                                 </div>
                             </div>

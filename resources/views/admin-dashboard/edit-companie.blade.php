@@ -21,13 +21,14 @@
                             {{ session('error') }}
                         </div>
                     @endif
-                        <form method="POST" action="{{ route('companies.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('companies.update', $company->id) }}" enctype="multipart/form-data">
                             @csrf
+                             @method('PUT')
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label" for="exampleFormControlInput1">Name</label>
-                                        <input type="text"value="{{ old('name') }}" name="name" class="form-control" id="exampleFormControlInput1"
+                                        <input type="text"value="{{ ($company->name) ? $company->name : old('name') }}" name="name" class="form-control" id="exampleFormControlInput1"
                                             placeholder="">
                                             @error('name')
                                             <span class="invalid-feedback" role="alert">
@@ -55,7 +56,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label" for="exampleFormControlInput1">Email</label>
-                                        <input type="email" name="email" value="{{ old('email') }}" class="form-control" id="exampleFormControlInput1"
+                                        <input type="email" name="email" value="{{ ($company->email) ? $company->email :  old('email') }}" class="form-control" id="exampleFormControlInput1"
                                             placeholder="">
                                             @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -67,7 +68,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-label" for="exampleFormControlInput1">Website</label>
-                                        <input type="text" value="{{ old('website') }}" name="website" class="form-control" id="exampleFormControlInput1"
+                                        <input type="text" value="{{ ($company->website) ? $company->website : old('website') }}" name="website" class="form-control" id="exampleFormControlInput1"
                                             placeholder="">
                                             @error('website')
                                             <span class="invalid-feedback" role="alert">
@@ -78,7 +79,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </div>
                 </div>

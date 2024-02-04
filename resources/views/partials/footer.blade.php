@@ -63,6 +63,14 @@
 <script src="{{ asset('vendors/apex_chart/bar_active_1.js') }}"></script>
 <script src="{{ asset('vendors/chartjs/chartjs_active.js') }}"></script>
 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+<!-- Include DataTables Yajra JS -->
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script>
+
+
 </body>
 
 <!-- Mirrored from demo.dashboardpack.com/finance-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Feb 2024 05:33:54 GMT -->
